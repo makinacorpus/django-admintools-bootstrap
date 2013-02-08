@@ -3,10 +3,9 @@
 {% load url from future %}
 
 {% block extrahead %}
-{% url 'admin:jsi18n' as jsi18nurl %}
+{% url 'admin:jsi18n' as jsi18nurl %}{{ block.super }}
 <script type="text/javascript" src="{{ jsi18nurl|default:"../../../jsi18n/" }}"></script>
 {{ media }}
-{{ block.super }}
 <script type="text/javascript" src="{{ STATIC_URL }}admintools_bootstrap/bootstrap/js/bootstrap-tab.js"></script>
 {% endblock %}
 
